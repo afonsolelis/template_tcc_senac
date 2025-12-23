@@ -1,4 +1,4 @@
-# Template de TCC - Senac Santo Amaro
+# Template de TCC em Ciência da Computação - Senac Santo Amaro
 
 Template de Trabalho de Conclusão de Curso (TCC) para o Centro Universitário Senac - Santo Amaro, desenvolvido em LaTeX utilizando a classe `abntex2`.
 
