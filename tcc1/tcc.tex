@@ -3,7 +3,7 @@
 % ---------------------------------------------------------------
 % Trabalho de Conclusão de Curso 1
 % Elaborado para apresentação da proposta inicial do TCC
-% Estrutura: 4 capítulos (Introdução, Revisão Bibliográfica,
+% Estrutura: 4 capítulos (Introdução, Referencial Bibliográfico,
 %            Desenvolvimento, Referências Bibliográficas)
 % ---------------------------------------------------------------
 
@@ -117,7 +117,7 @@
 % RESUMO
 % ---------------------------------------------------------------
 \begin{resumo}
-Este documento apresenta a proposta inicial do Trabalho de Conclusão de Curso (TCC1) desenvolvido no SENAC Santo Amaro. O objetivo deste trabalho é [descrever brevemente o objetivo principal do TCC]. A justificativa para este estudo baseia-se em [descrever brevemente a justificativa]. A revisão bibliográfica abrange [mencionar os principais tópicos]. Como solução proposta, pretende-se [descrever brevemente a solução]. Este trabalho está organizado em três capítulos que apresentam a introdução ao tema, a revisão bibliográfica que fundamenta a pesquisa, o desenvolvimento com a solução proposta e o cronograma de trabalho, seguidos das referências bibliográficas.
+Este documento apresenta a proposta inicial do Trabalho de Conclusão de Curso (TCC1) desenvolvido no SENAC Santo Amaro. O objetivo deste trabalho é [descrever brevemente o objetivo principal do TCC]. A justificativa para este estudo baseia-se em [descrever brevemente a justificativa]. O referencial bibliográfico abrange [mencionar os principais tópicos]. Como solução proposta, pretende-se [descrever brevemente a solução]. Este trabalho está organizado em capítulos que apresentam a introdução ao tema, o referencial bibliográfico que fundamenta a pesquisa, o desenvolvimento com a solução proposta e o cronograma de trabalho, seguidos das referências bibliográficas.
 
 \vspace{\onelineskip}
 
@@ -138,6 +138,37 @@ Este documento apresenta a proposta inicial do Trabalho de Conclusão de Curso (
 % \pdfbookmark[0]{\listtablename}{lot}
 % \listoftables*
 % \cleardoublepage
+
+% ---------------------------------------------------------------
+% LISTA DE ABREVIATURAS E SIGLAS
+% ---------------------------------------------------------------
+% Esta lista deve vir antes do início do trabalho (elementos pré-textuais).
+% Em ordem alfabética, relacione APENAS as abreviaturas e siglas que
+% realmente aparecem no texto. Edite a tabela conforme o seu trabalho.
+\pdfbookmark[0]{Lista de Abreviaturas e Siglas}{loas}
+\chapter*{Lista de Abreviaturas e Siglas}
+
+\noindent A lista a seguir reúne, em ordem alfabética, as abreviaturas e siglas utilizadas neste trabalho, acompanhadas de seus respectivos significados. Substitua, acrescente ou remova linhas conforme a necessidade do seu projeto.
+
+\vspace{\onelineskip}
+
+\begin{center}
+\begin{tabular}{@{}p{3.2cm}p{0.6\textwidth}@{}}
+\toprule
+\textbf{Abreviatura/Sigla} & \textbf{Significado} \\
+\midrule
+ABNT  & Associação Brasileira de Normas Técnicas \\
+API   & \textit{Application Programming Interface} (Interface de Programação de Aplicações) \\
+HTTP  & \textit{Hypertext Transfer Protocol} \\
+REST  & \textit{Representational State Transfer} \\
+SQL   & \textit{Structured Query Language} \\
+TCC   & Trabalho de Conclusão de Curso \\
+UML   & \textit{Unified Modeling Language} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\cleardoublepage
 
 % ---------------------------------------------------------------
 % SUMÁRIO
@@ -244,24 +275,12 @@ Os objetivos secundários são desdobramentos do objetivo principal. Eles descre
 \textbf{Atenção}: cada objetivo secundário deve contribuir diretamente para o alcance do objetivo principal. Evite listar objetivos que não tenham relação clara com o problema.
 
 % ===============================================================
-% CAPÍTULO 2 - REVISÃO BIBLIOGRÁFICA
+% CAPÍTULO 2 - REFERENCIAL BIBLIOGRÁFICO
 % ===============================================================
-\chapter{Revisão Bibliográfica}
-\label{cap:revisao}
+\chapter{Referencial Bibliográfico}
+\label{cap:referencial}
 
-A revisão bibliográfica tem como finalidade apresentar o embasamento teórico do trabalho, demonstrando o conhecimento do autor sobre o tema e identificando o estado da arte. Este capítulo deve ser organizado por conceitos e temas, construindo uma linha de argumentação que sustente a proposta do trabalho.
-
-% ---------------------------------------------------------------
-\section{Referencial teórico}
-\label{sec:referencial}
-
-Apresente os principais conceitos, teorias e definições que fundamentam o trabalho. O referencial teórico deve fornecer ao leitor a base necessária para compreender o problema e a solução proposta.
-
-Organize esta seção por temas ou conceitos, não por autor. Cada subseção deve abordar um conceito relevante, explicando-o e relacionando-o ao contexto do trabalho.
-
-Por exemplo: se o trabalho envolve desenvolvimento web, aborde conceitos como arquitetura cliente-servidor, APIs REST, padrões de projeto, etc. Se envolve inteligência artificial, explique os algoritmos e técnicas que serão utilizados.
-
-Utilize citações para fundamentar cada conceito apresentado. Segundo \citeonline{Wazlawick2020}, o referencial teórico deve demonstrar que o autor domina os fundamentos necessários para conduzir a pesquisa.
+O referencial bibliográfico tem como finalidade apresentar o embasamento teórico e técnico do trabalho, demonstrando o conhecimento do autor sobre o tema e identificando o estado da arte. Para evitar dúvidas sobre o que escrever em cada parte, este capítulo está organizado em apenas três seções: a \textbf{metodologia da pesquisa bibliográfica} (como as fontes foram levantadas e selecionadas), o \textbf{referencial} (os conceitos e as tecnologias que fundamentam a proposta, reunidos em um único lugar) e os \textbf{trabalhos relacionados} (estudos que enfrentaram o mesmo problema).
 
 % ---------------------------------------------------------------
 \section{Metodologia da pesquisa bibliográfica}
@@ -281,19 +300,21 @@ Exemplo de descrição:
 \textit{A pesquisa bibliográfica foi realizada nas bases Google Scholar, IEEE Xplore e ACM Digital Library, utilizando as palavras-chave ``machine learning'', ``classificação de texto'' e ``processamento de linguagem natural''. Foram selecionados artigos publicados entre 2018 e 2025, em português e inglês, que abordassem diretamente técnicas de classificação automática de documentos.}
 
 % ---------------------------------------------------------------
-\section{Fundamentos}
-\label{sec:fundamentos}
+\section{Referencial}
+\label{sec:referencial}
 
-Aprofunde os conceitos técnicos que serão utilizados na solução proposta. Diferentemente do referencial teórico (que apresenta conceitos gerais), os fundamentos devem detalhar as tecnologias, algoritmos, frameworks ou metodologias específicas que serão empregados no desenvolvimento.
+Esta seção reúne, em um único lugar, todo o embasamento teórico e técnico do trabalho. Aqui você apresenta os conceitos, teorias e definições que fundamentam a pesquisa e, na sequência, detalha as tecnologias, algoritmos, frameworks ou metodologias específicas que serão empregados no desenvolvimento da solução. \textbf{Não é necessário separar ``teoria'' de ``fundamentos técnicos''}: organize o conteúdo de forma fluida, partindo do mais geral para o mais específico.
+
+Organize esta seção por temas ou conceitos, não por autor. Cada subseção deve abordar um conceito relevante, explicando-o, relacionando-o ao contexto do trabalho e, quando aplicável, mostrando como ele será utilizado na solução proposta.
 
 Por exemplo:
 \begin{itemize}
-    \item Se o trabalho utiliza aprendizado de máquina, explique os algoritmos escolhidos (árvores de decisão, redes neurais, SVM, etc.);
-    \item Se o trabalho envolve desenvolvimento de software, descreva as tecnologias (linguagens, frameworks, bancos de dados);
-    \item Se envolve análise de dados, explique as métricas e técnicas estatísticas que serão aplicadas.
+    \item Se o trabalho envolve desenvolvimento web, apresente desde os conceitos gerais (arquitetura cliente-servidor, APIs REST, padrões de projeto) até as tecnologias concretas que serão usadas (linguagens, frameworks, bancos de dados) e o porquê de cada escolha;
+    \item Se envolve inteligência artificial, explique os fundamentos da área e, em seguida, os algoritmos e técnicas específicos que serão aplicados (árvores de decisão, redes neurais, SVM, etc.);
+    \item Se envolve análise de dados, apresente os conceitos estatísticos e, na sequência, as métricas e técnicas que serão efetivamente utilizadas.
 \end{itemize}
 
-Utilize figuras, diagramas e tabelas para ilustrar conceitos quando apropriado.
+Utilize citações para fundamentar cada conceito apresentado e empregue figuras, diagramas e tabelas para ilustrar quando apropriado. Segundo \citeonline{Wazlawick2020}, o referencial deve demonstrar que o autor domina os fundamentos necessários para conduzir a pesquisa.
 
 % ---------------------------------------------------------------
 \section{Trabalhos relacionados}
