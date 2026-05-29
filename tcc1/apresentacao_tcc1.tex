@@ -1,0 +1,344 @@
+% ===============================================================
+% TEMPLATE DE APRESENTAÇÃO (BEAMER) - TCC1 - SENAC SANTO AMARO
+% ===============================================================
+% Apresentação da PROPOSTA de Trabalho de Conclusão de Curso (TCC1)
+%
+% >>> DURAÇÃO DA APRESENTAÇÃO: 20 MINUTOS <<<
+%
+% A apresentação DEVE seguir a mesma estrutura do documento escrito
+% (arquivo tcc.tex), na ordem:
+%   1. Introdução (Contexto, Justificativa, Objetivos)
+%   2. Referencial Bibliográfico (Metodologia da pesquisa,
+%      Referencial, Trabalhos relacionados)
+%   3. Desenvolvimento (Solução proposta, Cronograma)
+%
+% LOGO: a logo do SENAC aparece GRANDE no primeiro slide (capa) e
+% PEQUENA no canto superior direito dos demais slides.
+% Coloque o arquivo da logo em:  assets/logo-senac.png
+% (Se o arquivo não existir, um marcador de texto é exibido no lugar
+%  para que a apresentação compile mesmo assim.)
+%
+% COMO COMPILAR:
+%   pdflatex apresentacao_tcc1.tex
+%   pdflatex apresentacao_tcc1.tex   (2x para fixar índice/numeração)
+% ===============================================================
+
+\documentclass[
+    aspectratio=169,   % proporção 16:9 (use 43 para 4:3)
+    12pt,
+    brazil
+]{beamer}
+
+% ---------------------------------------------------------------
+% PACOTES
+% ---------------------------------------------------------------
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[brazil]{babel}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tikz}
+\usepackage{pgfgantt}      % cronograma (Gantt), igual ao documento escrito
+\usepackage{appendixnumberbeamer}
+
+% ---------------------------------------------------------------
+% TEMA E CORES
+% ---------------------------------------------------------------
+\usetheme{default}
+\useinnertheme{circles}
+\setbeamertemplate{navigation symbols}{}   % remove ícones de navegação
+
+% Cores institucionais (ajuste se o curso definir outras)
+\definecolor{senacblue}{RGB}{0,51,102}
+\definecolor{senacorange}{RGB}{243,146,0}
+
+\setbeamercolor{structure}{fg=senacblue}
+\setbeamercolor{frametitle}{fg=white,bg=senacblue}
+\setbeamercolor{title}{fg=senacblue}
+\setbeamercolor{section in toc}{fg=senacblue}
+\setbeamercolor{itemize item}{fg=senacorange}
+\setbeamercolor{itemize subitem}{fg=senacorange}
+\setbeamerfont{frametitle}{series=\bfseries}
+\setbeamertemplate{frametitle}[default][left]
+
+% Rodapé simples: autor | título curto | número do slide
+\setbeamertemplate{footline}{%
+  \leavevmode%
+  \hbox{%
+    \begin{beamercolorbox}[wd=.34\paperwidth,ht=2.4ex,dp=1ex,leftskip=1em]{author in head/foot}%
+      \usebeamerfont{author in head/foot}\insertshortauthor
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.4ex,dp=1ex,center]{title in head/foot}%
+      \usebeamerfont{title in head/foot}\insertshorttitle
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=.16\paperwidth,ht=2.4ex,dp=1ex,rightskip=1em]{title in head/foot}%
+      \usebeamerfont{title in head/foot}\hfill\insertframenumber/\inserttotalframenumber
+    \end{beamercolorbox}%
+  }\vskip0pt%
+}
+\setbeamercolor{author in head/foot}{bg=senacblue,fg=white}
+\setbeamercolor{title in head/foot}{bg=senacblue!85,fg=white}
+
+% ---------------------------------------------------------------
+% LOGO DO SENAC (grande na capa, pequena no canto dos demais slides)
+% ---------------------------------------------------------------
+% Macro para a logo GRANDE (capa).
+\newcommand{\logosenacgrande}{%
+  \IfFileExists{assets/logo-senac.png}{%
+    \includegraphics[height=2.6cm]{assets/logo-senac.png}%
+  }{%
+    \begin{tikzpicture}
+      \node[draw=senacblue,line width=1pt,rounded corners,
+            minimum width=4.5cm,minimum height=2.4cm,align=center,
+            fill=senacblue!5]
+        {\bfseries\color{senacblue}\Large SENAC\\[2pt]
+         \normalsize Santo Amaro\\[6pt]
+         \scriptsize\itshape (coloque assets/logo-senac.png)};
+    \end{tikzpicture}%
+  }%
+}
+
+% Macro para a logo PEQUENA (canto superior direito).
+\newcommand{\logosenacpequena}{%
+  \IfFileExists{assets/logo-senac.png}{%
+    \includegraphics[height=0.8cm]{assets/logo-senac.png}%
+  }{%
+    \fbox{\scriptsize\bfseries\color{senacblue}SENAC}%
+  }%
+}
+
+% Coloca a logo pequena no canto superior direito dos slides que têm
+% título (sobre a barra azul, dentro de um pequeno "chip" branco para
+% que a logo preta fique visível). Os frames "plain" (capa e
+% encerramento) não têm frametitle, logo não recebem a logo pequena
+% --- exatamente como desejado.
+\addtobeamertemplate{frametitle}{}{%
+  \begin{tikzpicture}[remember picture,overlay]
+    \node[anchor=north east,fill=white,rounded corners=2pt,inner sep=3pt]
+      at ([xshift=-6pt,yshift=-5pt]current page.north east) {\logosenacpequena};
+  \end{tikzpicture}%
+}
+
+% ---------------------------------------------------------------
+% DADOS DA APRESENTAÇÃO (preencha)
+% ---------------------------------------------------------------
+\title[Título curto do TCC]{Título do Trabalho de Conclusão de Curso}
+\subtitle{Proposta de TCC --- TCC1}
+\author[Nome do Aluno]{Nome Completo do Aluno}
+\institute[SENAC Santo Amaro]{%
+  SENAC --- Unidade Santo Amaro\\
+  Bacharelado em Ciência da Computação\\
+  \footnotesize Orientador: Prof. Nome do Orientador}
+\date{São Paulo, 2025}
+
+% ===============================================================
+\begin{document}
+
+% ---------------------------------------------------------------
+% SLIDE 1 - CAPA (logo GRANDE)  -- ~0:30
+% ---------------------------------------------------------------
+{
+\setbeamertemplate{footline}{}   % capa sem rodapé
+\begin{frame}[plain]
+  \centering
+  \vspace{0.3cm}
+  \logosenacgrande
+
+  \vspace{0.6cm}
+  {\usebeamerfont{title}\usebeamercolor[fg]{title}\bfseries\inserttitle\par}
+  \vspace{0.2cm}
+  {\large\insertsubtitle\par}
+
+  \vspace{0.8cm}
+  {\insertauthor\par}
+  \vspace{0.2cm}
+  {\footnotesize\insertinstitute\par}
+
+  \vfill
+  {\footnotesize\insertdate\par}
+\end{frame}
+}
+
+% ---------------------------------------------------------------
+% SLIDE 2 - AGENDA / ROTEIRO  -- ~0:30
+% ---------------------------------------------------------------
+\begin{frame}{Roteiro da apresentação}
+  \tableofcontents
+\end{frame}
+
+% ===============================================================
+% A ORDEM ABAIXO SEGUE EXATAMENTE O DOCUMENTO ESCRITO (tcc.tex)
+% Sugestão de tempo total: 20 minutos
+%   - Introdução .................. ~5 min
+%   - Referencial Bibliográfico ... ~5 min
+%   - Desenvolvimento ............. ~7 min
+%   - Encerramento ................ ~3 min
+% Regra prática: ~1 a 1,5 min por slide => ~14 a 18 slides de conteúdo.
+% Reserve ~2 a 3 min para perguntas da banca, dentro dos 20 min.
+% ===============================================================
+
+% ---------------------------------------------------------------
+\section{Introdução}
+% ---------------------------------------------------------------
+\begin{frame}{Contexto}
+  \begin{itemize}
+    \item Apresente o cenário que originou o problema.
+    \item Mostre dados/indicadores que comprovem a existência do problema.
+    \item Indique quem é afetado e as consequências de não resolvê-lo.
+  \end{itemize}
+  \vfill
+  {\footnotesize\itshape Dica: 1 slide, foco em situar a banca rapidamente.}
+\end{frame}
+
+\begin{frame}{Problema e Justificativa}
+  \begin{block}{Problema}
+    Enuncie em uma frase clara o problema que o trabalho ataca.
+  \end{block}
+  \begin{itemize}
+    \item \textbf{Relevância acadêmica}: contribuição para a área.
+    \item \textbf{Relevância prática}: benefícios para usuários/sociedade.
+    \item \textbf{Lacuna}: o que ainda não foi resolvido.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Objetivos}
+  \begin{block}{Objetivo principal}
+    Frase única, com verbo no infinitivo (desenvolver, propor, avaliar\ldots).
+  \end{block}
+  \textbf{Objetivos secundários:}
+  \begin{enumerate}
+    \item Levantamento bibliográfico sobre o tema;
+    \item Levantamento e análise de requisitos;
+    \item Projeto da arquitetura da solução;
+    \item Implementação de protótipo (no TCC2);
+    \item Validação por testes/métricas/estudo de caso.
+  \end{enumerate}
+\end{frame}
+
+% ---------------------------------------------------------------
+\section{Referencial Bibliográfico}
+% ---------------------------------------------------------------
+\begin{frame}{Metodologia da pesquisa bibliográfica}
+  \begin{itemize}
+    \item \textbf{Bases consultadas}: Google Scholar, IEEE Xplore, ACM, SciELO\ldots
+    \item \textbf{Palavras-chave}: termos de busca (PT/EN).
+    \item \textbf{Critérios}: inclusão/exclusão e período de abrangência.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Referencial teórico e técnico}
+  \begin{itemize}
+    \item Conceitos e teorias que fundamentam a proposta.
+    \item Tecnologias/algoritmos/frameworks que serão empregados.
+    \item Do mais geral para o mais específico (1 a 2 slides).
+  \end{itemize}
+  \vfill
+  {\footnotesize\itshape Mostre domínio dos fundamentos --- não liste tudo, destaque o essencial.}
+\end{frame}
+
+\begin{frame}{Trabalhos relacionados}
+  \small
+  \begin{table}
+    \centering
+    \begin{tabular}{lcccc}
+      \toprule
+      \textbf{Critério} & \textbf{Trab. 1} & \textbf{Trab. 2} & \textbf{Trab. 3} & \textbf{Este} \\
+      \midrule
+      Objetivo   & [\,] & [\,] & [\,] & [\,] \\
+      Tecnologia & [\,] & [\,] & [\,] & [\,] \\
+      Validação  & [\,] & [\,] & [\,] & [\,] \\
+      Limitação  & [\,] & [\,] & [\,] & --- \\
+      \bottomrule
+    \end{tabular}
+  \end{table}
+  \vfill
+  {\footnotesize Até 3 trabalhos que atacaram o \textbf{mesmo problema}; destaque como o seu avança.}
+\end{frame}
+
+% ---------------------------------------------------------------
+\section{Desenvolvimento}
+% ---------------------------------------------------------------
+\begin{frame}{Solução proposta}
+  \begin{itemize}
+    \item \textbf{Visão geral}: o que será desenvolvido.
+    \item \textbf{Arquitetura}: componentes e como interagem.
+    \item \textbf{Tecnologias}: linguagens, frameworks, banco de dados.
+    \item \textbf{Funcionalidades} principais.
+    \item \textbf{Validação}: como o sucesso será medido.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Arquitetura da solução}
+  \centering
+  % Substitua pelo seu diagrama:
+  % \includegraphics[width=0.8\textwidth]{assets/arquitetura.png}
+  \begin{tikzpicture}[node distance=1.4cm,every node/.style={font=\small}]
+    \node[draw,rounded corners,fill=senacblue!10] (a) {Front-end};
+    \node[draw,rounded corners,fill=senacblue!10,right=2cm of a] (b) {Back-end / API};
+    \node[draw,rounded corners,fill=senacblue!10,right=2cm of b] (c) {Banco de dados};
+    \draw[->,thick] (a) -- (b);
+    \draw[->,thick] (b) -- (c);
+  \end{tikzpicture}
+  \vfill
+  {\footnotesize\itshape Use um diagrama, fluxograma ou mockup --- evite parágrafos longos.}
+\end{frame}
+
+\begin{frame}{Cronograma (TCC2)}
+  \centering
+  \resizebox{\textwidth}{!}{%
+  \begin{ganttchart}[
+      hgrid, vgrid,
+      bar/.append style={fill=senacblue!40},
+      group/.append style={draw=black, fill=senacblue!70},
+      milestone/.append style={fill=senacorange},
+      bar label font=\scriptsize, group label font=\scriptsize\bfseries,
+      title label font=\scriptsize, milestone label font=\scriptsize\itshape,
+    ]{1}{16}
+    \gantttitle{Semanas}{16} \\
+    \gantttitlelist{1,...,16}{1} \\
+    \ganttgroup{Planejamento}{1}{4} \\
+    \ganttbar{Revisão / requisitos}{1}{4} \\
+    \ganttmilestone{Projeto}{4} \\
+    \ganttgroup{Desenvolvimento}{5}{11} \\
+    \ganttbar{Implementação}{5}{11} \\
+    \ganttmilestone{Protótipo}{11} \\
+    \ganttgroup{Validação}{12}{16} \\
+    \ganttbar{Testes e redação}{12}{16} \\
+    \ganttmilestone{Entrega}{16}
+  \end{ganttchart}}
+\end{frame}
+
+% ---------------------------------------------------------------
+\section{Considerações finais}
+% ---------------------------------------------------------------
+\begin{frame}{Resultados esperados e próximos passos}
+  \begin{itemize}
+    \item O que se espera entregar ao final do TCC2.
+    \item Riscos e como serão mitigados.
+    \item Próximas etapas imediatas.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[plain]
+  \centering
+  \vspace{1cm}
+  \logosenacgrande
+
+  \vspace{0.8cm}
+  {\Large\bfseries\color{senacblue}Obrigado!\par}
+  \vspace{0.3cm}
+  {\normalsize Perguntas?\par}
+  \vspace{0.6cm}
+  {\footnotesize Nome Completo do Aluno \\ email@exemplo.com}
+\end{frame}
+
+% ---------------------------------------------------------------
+% APÊNDICE (slides de apoio / backup para perguntas da banca)
+% ---------------------------------------------------------------
+\appendix
+\begin{frame}{Slides de apoio}
+  Use slides extras (após o "Obrigado") para responder perguntas:
+  detalhes técnicos, tabelas completas, referências, etc.
+\end{frame}
+
+\end{document}

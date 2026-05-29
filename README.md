@@ -82,6 +82,49 @@ pdflatex tcc.tex
 - O `bibtex` processa as referências bibliográficas
 - As próximas duas compilações atualizam as referências cruzadas e o sumário
 
+## 🎤 Apresentações (Beamer)
+
+Além dos documentos escritos, o repositório inclui templates de **slides** em LaTeX/Beamer para a defesa perante a banca:
+
+- **`tcc1/apresentacao_tcc1.tex`** — apresentação da proposta (TCC1) — **20 minutos**
+- **`tcc2/apresentacao_tcc2.tex`** — apresentação final (TCC2) — **30 minutos**
+
+### Regras de tempo
+
+| Etapa | Duração da apresentação | Slides de conteúdo (aprox.) |
+|-------|-------------------------|------------------------------|
+| **TCC1** | **20 minutos** | 14 a 18 |
+| **TCC2** | **30 minutos** | 20 a 26 |
+
+- Cronometre os ensaios — ultrapassar o tempo é penalizado.
+- Ritmo de referência: ~1 a 1,5 minuto por slide.
+- A apresentação do **TCC1 segue exatamente a estrutura do documento escrito**: Introdução → Referencial Bibliográfico → Desenvolvimento (solução + cronograma).
+- O **TCC2** cobre o trabalho completo, com peso especial em **resultados e análise crítica**.
+- As regras completas também estão documentadas dentro de cada `.tex` escrito (seção/capítulo *Apresentação oral (banca)*).
+
+### Logo do SENAC
+
+Os templates exibem a **logo grande no primeiro slide (capa)** e a **logo pequena no canto superior direito dos demais slides** — isso já vem configurado.
+
+Para usar a logo oficial, coloque o arquivo em:
+
+```
+tcc1/assets/logo-senac.png      # para a apresentação do TCC1
+tcc2/assets/logo-senac.png      # para a apresentação do TCC2
+```
+
+> Se o arquivo não existir, um marcador de texto (`SENAC`) é exibido no lugar, de modo que a apresentação compila normalmente mesmo sem a imagem.
+
+### Compilando os slides
+
+```bash
+cd tcc1                       # ou cd tcc2
+pdflatex apresentacao_tcc1.tex
+pdflatex apresentacao_tcc1.tex   # 2x para fixar o roteiro e a numeração dos slides
+```
+
+O resultado é um PDF de slides em 16:9 (para 4:3, troque `aspectratio=169` por `aspectratio=43` no início do arquivo).
+
 ## ✏️ Personalizando o Template
 
 ### Informações Básicas

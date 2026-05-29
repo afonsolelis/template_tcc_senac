@@ -1,0 +1,12 @@
+Coloque aqui a logo do SENAC para a apresentação do TCC1.
+
+Arquivo esperado:
+    logo-senac.png
+
+- A logo aparece GRANDE no primeiro slide (capa) e PEQUENA no canto
+  superior direito dos demais slides (configuração automática).
+- Se "logo-senac.png" não existir, um marcador de texto "SENAC" é
+  exibido no lugar e a apresentação compila normalmente.
+- Outras imagens da apresentação (diagramas, gráficos, mockups)
+  também podem ser guardadas nesta pasta e referenciadas com
+  caminhos relativos, por exemplo: assets/arquitetura.png

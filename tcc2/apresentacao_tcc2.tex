@@ -1,0 +1,291 @@
+% ===============================================================
+% TEMPLATE DE APRESENTAÇÃO (BEAMER) - TCC2 - SENAC SANTO AMARO
+% ===============================================================
+% Apresentação FINAL do Trabalho de Conclusão de Curso (TCC2)
+%
+% >>> DURAÇÃO DA APRESENTAÇÃO: 30 MINUTOS <<<
+%
+% A apresentação deve cobrir o trabalho completo: problema,
+% objetivos, método, desenvolvimento, RESULTADOS e contribuição
+% (estrutura no estilo Wazlawick), seguindo o documento escrito
+% (arquivo tcc2.tex).
+%
+% LOGO: a logo do SENAC aparece GRANDE no primeiro slide (capa) e
+% PEQUENA no canto superior direito dos demais slides.
+% Coloque o arquivo da logo em:  assets/logo-senac.png
+% (Se o arquivo não existir, um marcador de texto é exibido no lugar
+%  para que a apresentação compile mesmo assim.)
+%
+% COMO COMPILAR:
+%   pdflatex apresentacao_tcc2.tex
+%   pdflatex apresentacao_tcc2.tex   (2x para fixar índice/numeração)
+% ===============================================================
+
+\documentclass[
+    aspectratio=169,
+    12pt,
+    brazil
+]{beamer}
+
+% ---------------------------------------------------------------
+% PACOTES
+% ---------------------------------------------------------------
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[brazil]{babel}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tikz}
+\usepackage{pgfgantt}
+\usepackage{appendixnumberbeamer}
+
+% ---------------------------------------------------------------
+% TEMA E CORES
+% ---------------------------------------------------------------
+\usetheme{default}
+\useinnertheme{circles}
+\setbeamertemplate{navigation symbols}{}
+
+\definecolor{senacblue}{RGB}{0,51,102}
+\definecolor{senacorange}{RGB}{243,146,0}
+
+\setbeamercolor{structure}{fg=senacblue}
+\setbeamercolor{frametitle}{fg=white,bg=senacblue}
+\setbeamercolor{title}{fg=senacblue}
+\setbeamercolor{section in toc}{fg=senacblue}
+\setbeamercolor{itemize item}{fg=senacorange}
+\setbeamercolor{itemize subitem}{fg=senacorange}
+\setbeamerfont{frametitle}{series=\bfseries}
+\setbeamertemplate{frametitle}[default][left]
+
+\setbeamertemplate{footline}{%
+  \leavevmode%
+  \hbox{%
+    \begin{beamercolorbox}[wd=.34\paperwidth,ht=2.4ex,dp=1ex,leftskip=1em]{author in head/foot}%
+      \usebeamerfont{author in head/foot}\insertshortauthor
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.4ex,dp=1ex,center]{title in head/foot}%
+      \usebeamerfont{title in head/foot}\insertshorttitle
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=.16\paperwidth,ht=2.4ex,dp=1ex,rightskip=1em]{title in head/foot}%
+      \usebeamerfont{title in head/foot}\hfill\insertframenumber/\inserttotalframenumber
+    \end{beamercolorbox}%
+  }\vskip0pt%
+}
+\setbeamercolor{author in head/foot}{bg=senacblue,fg=white}
+\setbeamercolor{title in head/foot}{bg=senacblue!85,fg=white}
+
+% ---------------------------------------------------------------
+% LOGO DO SENAC (grande na capa, pequena no canto dos demais slides)
+% ---------------------------------------------------------------
+\newcommand{\logosenacgrande}{%
+  \IfFileExists{assets/logo-senac.png}{%
+    \includegraphics[height=2.6cm]{assets/logo-senac.png}%
+  }{%
+    \begin{tikzpicture}
+      \node[draw=senacblue,line width=1pt,rounded corners,
+            minimum width=4.5cm,minimum height=2.4cm,align=center,
+            fill=senacblue!5]
+        {\bfseries\color{senacblue}\Large SENAC\\[2pt]
+         \normalsize Santo Amaro\\[6pt]
+         \scriptsize\itshape (coloque assets/logo-senac.png)};
+    \end{tikzpicture}%
+  }%
+}
+
+\newcommand{\logosenacpequena}{%
+  \IfFileExists{assets/logo-senac.png}{%
+    \includegraphics[height=0.8cm]{assets/logo-senac.png}%
+  }{%
+    \fbox{\scriptsize\bfseries\color{senacblue}SENAC}%
+  }%
+}
+
+% Logo pequena no canto superior direito dos slides com título (chip
+% branco para a logo preta ficar visível sobre a barra azul). Frames
+% "plain" (capa/encerramento) não têm frametitle e ficam sem a logo.
+\addtobeamertemplate{frametitle}{}{%
+  \begin{tikzpicture}[remember picture,overlay]
+    \node[anchor=north east,fill=white,rounded corners=2pt,inner sep=3pt]
+      at ([xshift=-6pt,yshift=-5pt]current page.north east) {\logosenacpequena};
+  \end{tikzpicture}%
+}
+
+% ---------------------------------------------------------------
+% DADOS DA APRESENTAÇÃO (preencha)
+% ---------------------------------------------------------------
+\title[Título curto do TCC]{Título do Trabalho de Conclusão de Curso}
+\subtitle{Apresentação final --- TCC2}
+\author[Nome do Aluno]{Nome Completo do Aluno}
+\institute[SENAC Santo Amaro]{%
+  SENAC --- Unidade Santo Amaro\\
+  Bacharelado em Ciência da Computação\\
+  \footnotesize Orientador: Prof. Nome do Orientador}
+\date{São Paulo, 2025}
+
+% ===============================================================
+\begin{document}
+
+% ---------------------------------------------------------------
+% SLIDE 1 - CAPA (logo GRANDE)
+% ---------------------------------------------------------------
+{
+\setbeamertemplate{footline}{}
+\begin{frame}[plain]
+  \centering
+  \vspace{0.3cm}
+  \logosenacgrande
+
+  \vspace{0.6cm}
+  {\usebeamerfont{title}\usebeamercolor[fg]{title}\bfseries\inserttitle\par}
+  \vspace{0.2cm}
+  {\large\insertsubtitle\par}
+
+  \vspace{0.8cm}
+  {\insertauthor\par}
+  \vspace{0.2cm}
+  {\footnotesize\insertinstitute\par}
+
+  \vfill
+  {\footnotesize\insertdate\par}
+\end{frame}
+}
+
+% ---------------------------------------------------------------
+% SLIDE 2 - AGENDA
+% ---------------------------------------------------------------
+\begin{frame}{Roteiro da apresentação}
+  \tableofcontents
+\end{frame}
+
+% ===============================================================
+% Sugestão de tempo total: 30 minutos
+%   - Introdução e problema ........ ~4 min
+%   - Objetivos e método ........... ~5 min
+%   - Desenvolvimento .............. ~8 min
+%   - Resultados e análise ......... ~8 min
+%   - Conclusão e contribuições .... ~3 min
+%   - Demonstração (se houver) ..... ~2 min
+% Regra prática: ~1 a 1,5 min por slide => ~20 a 26 slides de conteúdo.
+% Reserve ~5 min para a arguição da banca, separados dos 30 min.
+% ===============================================================
+
+% ---------------------------------------------------------------
+\section{Introdução e problema}
+% ---------------------------------------------------------------
+\begin{frame}{Contexto e problema}
+  \begin{itemize}
+    \item Cenário e relevância do tema.
+    \item Enunciado claro do problema de pesquisa.
+    \item Justificativa: por que resolver isso importa.
+  \end{itemize}
+\end{frame}
+
+% ---------------------------------------------------------------
+\section{Objetivos e método}
+% ---------------------------------------------------------------
+\begin{frame}{Objetivos}
+  \begin{block}{Objetivo principal}
+    Frase única, com verbo no infinitivo.
+  \end{block}
+  \textbf{Objetivos secundários:}
+  \begin{enumerate}
+    \item \ldots
+    \item \ldots
+    \item \ldots
+  \end{enumerate}
+\end{frame}
+
+\begin{frame}{Método de pesquisa}
+  \begin{itemize}
+    \item Tipo de pesquisa e abordagem (estilo Wazlawick).
+    \item Etapas metodológicas e instrumentos.
+    \item Critérios de avaliação dos resultados (métricas, hipóteses).
+  \end{itemize}
+\end{frame}
+
+% ---------------------------------------------------------------
+\section{Desenvolvimento}
+% ---------------------------------------------------------------
+\begin{frame}{Solução desenvolvida}
+  \begin{itemize}
+    \item Visão geral do que foi efetivamente construído.
+    \item Tecnologias e decisões de projeto.
+    \item Funcionalidades implementadas.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Arquitetura}
+  \centering
+  % \includegraphics[width=0.8\textwidth]{assets/arquitetura.png}
+  \begin{tikzpicture}[node distance=1.4cm,every node/.style={font=\small}]
+    \node[draw,rounded corners,fill=senacblue!10] (a) {Front-end};
+    \node[draw,rounded corners,fill=senacblue!10,right=2cm of a] (b) {Back-end / API};
+    \node[draw,rounded corners,fill=senacblue!10,right=2cm of b] (c) {Banco de dados};
+    \draw[->,thick] (a) -- (b);
+    \draw[->,thick] (b) -- (c);
+  \end{tikzpicture}
+\end{frame}
+
+\begin{frame}{Demonstração (opcional)}
+  \centering
+  \vspace{1cm}
+  {\Large Capturas de tela / vídeo curto da solução em funcionamento.}
+  \vfill
+  {\footnotesize\itshape Tenha um plano B (prints) caso a demo ao vivo falhe.}
+\end{frame}
+
+% ---------------------------------------------------------------
+\section{Resultados e análise}
+% ---------------------------------------------------------------
+\begin{frame}{Resultados obtidos}
+  \begin{itemize}
+    \item Apresente os dados/medições de forma objetiva.
+    \item Use gráficos e tabelas em vez de texto corrido.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Análise dos resultados}
+  \begin{itemize}
+    \item Os objetivos foram atingidos? Em que medida?
+    \item Comparação com os trabalhos relacionados.
+    \item Limitações observadas e suas causas.
+  \end{itemize}
+  \vfill
+  {\footnotesize\itshape Analise criticamente --- não apenas descreva os números.}
+\end{frame}
+
+% ---------------------------------------------------------------
+\section{Conclusão}
+% ---------------------------------------------------------------
+\begin{frame}{Conclusão e contribuições}
+  \begin{itemize}
+    \item Resposta ao problema de pesquisa.
+    \item Principais contribuições do trabalho.
+    \item Trabalhos futuros.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[plain]
+  \centering
+  \vspace{1cm}
+  \logosenacgrande
+
+  \vspace{0.8cm}
+  {\Large\bfseries\color{senacblue}Obrigado!\par}
+  \vspace{0.3cm}
+  {\normalsize Perguntas?\par}
+  \vspace{0.6cm}
+  {\footnotesize Nome Completo do Aluno \\ email@exemplo.com}
+\end{frame}
+
+% ---------------------------------------------------------------
+% APÊNDICE (slides de apoio para a arguição da banca)
+% ---------------------------------------------------------------
+\appendix
+\begin{frame}{Slides de apoio}
+  Detalhes técnicos, tabelas completas, trechos de código e
+  referências para responder às perguntas da banca.
+\end{frame}
+
+\end{document}
