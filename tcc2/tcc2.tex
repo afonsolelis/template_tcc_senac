@@ -2,35 +2,43 @@
 % TEMPLATE TCC2 - SENAC SANTO AMARO
 % ---------------------------------------------------------------
 % Trabalho de Conclusão de Curso 2
+% Elaborado para apresentação do trabalho final do TCC
+% Estrutura: Introdução, Revisão Bibliográfica, Metodologia,
+%            Desenvolvimento, Resultados e Análise, Conclusão
 % ---------------------------------------------------------------
 
 \documentclass[
-    12pt,
-    openright,
-    oneside,
-    a4paper,
-    english,
-    brazil
+    12pt,                % tamanho da fonte
+    openright,           % capítulos começam em página ímpar
+    oneside,             % para impressão em apenas um lado do papel
+    a4paper,             % tamanho do papel
+    english,             % idioma adicional
+    brazil               % idioma principal
 ]{abntex2}
 
-\usepackage{lmodern}
-\usepackage[T1]{fontenc}
-\usepackage[utf8]{inputenc}
-\usepackage{lastpage}
-\usepackage{indentfirst}
-\usepackage{color}
-\usepackage{graphicx}
-\usepackage{microtype}
-\usepackage{float}
-\usepackage{booktabs}
-\usepackage{multirow}
-\usepackage{longtable}
-\usepackage{amsmath,amssymb}
-\usepackage[brazilian,hyperpageref]{backref}
-\usepackage[alf]{abntex2cite}
+% ---------------------------------------------------------------
+% PACOTES
+% ---------------------------------------------------------------
+\usepackage{lmodern}                % Fonte Latin Modern
+\usepackage[T1]{fontenc}            % Seleção de códigos de fonte
+\usepackage[utf8]{inputenc}         % Codificação do documento
+\usepackage{lastpage}               % Usado pela Ficha catalográfica
+\usepackage{indentfirst}            % Indenta o primeiro parágrafo
+\usepackage{color}                  % Controle de cores
+\usepackage{graphicx}               % Inclusão de gráficos
+\usepackage{microtype}              % Melhorias de justificação
+\usepackage{float}                  % Para posicionamento de figuras
+\usepackage{booktabs}               % Tabelas profissionais
+\usepackage{multirow}               % Células mescladas em tabelas
+\usepackage{longtable}              % Tabelas longas
+\usepackage{amsmath,amssymb}        % Símbolos matemáticos
+\usepackage{pgfgantt}               % Diagramas de Gantt
+\usepackage[brazilian,hyperpageref]{backref}  % Páginas com citações
+\usepackage[alf]{abntex2cite}       % Citações ABNT
 
-\definecolor{blue}{RGB}{41,5,195}
-
+% ---------------------------------------------------------------
+% CONFIGURAÇÕES DO PDF
+% ---------------------------------------------------------------
 \makeatletter
 \hypersetup{
     pdftitle={\@title},
@@ -38,146 +46,339 @@
     pdfsubject={TCC2 - SENAC Santo Amaro},
     pdfcreator={LaTeX with abnTeX2},
     pdfkeywords={tcc2}{senac}{santo amaro}{trabalho de conclusão},
-    colorlinks=true,
-    linkcolor=blue,
-    citecolor=blue,
-    filecolor=magenta,
+    colorlinks=true,        % false: links em caixas; true: links coloridos
+    linkcolor=blue,         % cor dos links internos
+    citecolor=blue,         % cor dos links para bibliografia
+    filecolor=magenta,      % cor dos links para arquivos
     urlcolor=blue,
     bookmarksdepth=4
 }
 \makeatother
 
-\titulo{Título do TCC2}
+% ---------------------------------------------------------------
+% CONFIGURAÇÕES DE APARÊNCIA DO PDF FINAL
+% ---------------------------------------------------------------
+\definecolor{blue}{RGB}{41,5,195}
+
+% ---------------------------------------------------------------
+% INFORMAÇÕES DO DOCUMENTO
+% ---------------------------------------------------------------
+\titulo{Título do Trabalho de Conclusão de Curso}
 \autor{Nome Completo do Aluno}
 \local{São Paulo}
 \data{2025}
 \orientador{Prof. Nome do Orientador}
-\tipotrabalho{Trabalho de Conclusão de Curso II}
+% \coorientador{Prof. Nome do Coorientador} % Descomente se houver coorientador
+
 \instituicao{%
   SENAC -- Serviço Nacional de Aprendizagem Comercial
   \par
   Unidade Santo Amaro
   \par
-  Curso de Bacharelado em Ciência da Computação
+  Curso de [Nome do Curso]
 }
-\preambulo{Trabalho de Conclusão de Curso II apresentado ao SENAC Santo Amaro como requisito para conclusão do curso de Bacharelado em Ciência da Computação.}
 
+\tipotrabalho{Trabalho de Conclusão de Curso II}
+
+\preambulo{Trabalho de Conclusão de Curso II apresentado ao SENAC Santo Amaro como requisito parcial para conclusão do curso de [Nome do Curso].}
+
+% ---------------------------------------------------------------
+% COMPILA O ÍNDICE
+% ---------------------------------------------------------------
 \makeindex
 
+% ---------------------------------------------------------------
+% INÍCIO DO DOCUMENTO
+% ---------------------------------------------------------------
 \begin{document}
 
+% Seleciona o idioma do documento
 \selectlanguage{brazil}
+
+% Retira espaço extra obsoleto entre as frases
 \frenchspacing
 
+% ---------------------------------------------------------------
+% ELEMENTOS PRÉ-TEXTUAIS
+% ---------------------------------------------------------------
 \pretextual
 
+% ---------------------------------------------------------------
+% CAPA
+% ---------------------------------------------------------------
 \imprimircapa
+
+% ---------------------------------------------------------------
+% FOLHA DE ROSTO
+% ---------------------------------------------------------------
 \imprimirfolhaderosto
 
+% ---------------------------------------------------------------
+% RESUMO
+% ---------------------------------------------------------------
 \begin{resumo}
-Este documento apresenta o TCC2 com base na estrutura recomendada por Raul Sidnei Wazlawick em \textit{Metodologia de Pesquisa para Ciência da Computação}. O foco está em evidenciar problema, objetivos, método, desenvolvimento, resultados e contribuição, evitando textos meramente descritivos.
+Este documento apresenta o Trabalho de Conclusão de Curso (TCC2) desenvolvido no SENAC Santo Amaro, com base na estrutura recomendada por Raul Sidnei Wazlawick em \textit{Metodologia de Pesquisa para Ciência da Computação}. O foco está em evidenciar o problema, os objetivos, o método, o desenvolvimento, os resultados e a contribuição científica do trabalho, evitando textos meramente descritivos. O documento está organizado em capítulos que apresentam a introdução ao tema, a revisão bibliográfica que fundamenta a pesquisa, a metodologia adotada, o desenvolvimento da solução, os resultados e a respectiva análise crítica, seguidos da conclusão e das referências bibliográficas.
+
+\vspace{\onelineskip}
+
+\noindent
+\textbf{Palavras-chave}: palavra1. palavra2. palavra3. palavra4. palavra5.
 \end{resumo}
 
-\begin{resumo}[Abstract]
-This document follows the TCC structure proposed by Wazlawick for Computer Science, emphasizing the research problem, objectives, proposed method, development details, and scientific analysis of results.
-\end{resumo}
+% ---------------------------------------------------------------
+% LISTA DE ILUSTRAÇÕES
+% ---------------------------------------------------------------
+% \pdfbookmark[0]{\listfigurename}{lof}
+% \listoffigures*
+% \cleardoublepage
 
+% ---------------------------------------------------------------
+% LISTA DE TABELAS
+% ---------------------------------------------------------------
+% \pdfbookmark[0]{\listtablename}{lot}
+% \listoftables*
+% \cleardoublepage
+
+% ---------------------------------------------------------------
+% LISTA DE ABREVIATURAS E SIGLAS
+% ---------------------------------------------------------------
+% Esta lista deve vir antes do início do trabalho (elementos pré-textuais).
+% Em ordem alfabética, relacione APENAS as abreviaturas e siglas que
+% realmente aparecem no texto. Edite a tabela conforme o seu trabalho.
+\pdfbookmark[0]{Lista de Abreviaturas e Siglas}{loas}
+\chapter*{Lista de Abreviaturas e Siglas}
+
+\noindent A lista a seguir reúne, em ordem alfabética, as abreviaturas e siglas utilizadas neste trabalho, acompanhadas de seus respectivos significados. Substitua, acrescente ou remova linhas conforme a necessidade do seu projeto.
+
+\vspace{\onelineskip}
+
+\begin{center}
+\begin{tabular}{@{}p{3.2cm}p{0.6\textwidth}@{}}
+\toprule
+\textbf{Abreviatura/Sigla} & \textbf{Significado} \\
+\midrule
+ABNT  & Associação Brasileira de Normas Técnicas \\
+API   & \textit{Application Programming Interface} (Interface de Programação de Aplicações) \\
+HTTP  & \textit{Hypertext Transfer Protocol} \\
+REST  & \textit{Representational State Transfer} \\
+SQL   & \textit{Structured Query Language} \\
+TCC   & Trabalho de Conclusão de Curso \\
+UML   & \textit{Unified Modeling Language} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\cleardoublepage
+
+% ---------------------------------------------------------------
+% SUMÁRIO
+% ---------------------------------------------------------------
+\pdfbookmark[0]{\contentsname}{toc}
 \tableofcontents*
 \cleardoublepage
 
+% ---------------------------------------------------------------
+% ELEMENTOS TEXTUAIS
+% ---------------------------------------------------------------
 \textual
 
-% ---------------------------------------------------------------
-% INTRODUÇÃO
-% ---------------------------------------------------------------
+% ===============================================================
+% CAPÍTULO 1 - INTRODUÇÃO
+% ===============================================================
 \chapter{Introdução}
+\label{cap:introducao}
 
+A introdução deve apresentar o tema do trabalho de forma clara e objetiva, situando o leitor no contexto da pesquisa. Neste capítulo são apresentados a contextualização do problema, a sua formulação, os objetivos e a hipótese que norteiam a pesquisa, bem como a justificativa para a realização do estudo.
+
+% ---------------------------------------------------------------
 \section{Contextualização do problema}
-Descreva o cenário atual e a lacuna identificada, embasando o texto em dados, estatísticas, políticas ou práticas profissionais. Evite narrativas históricas extensas e mantenha o foco no problema.
+\label{sec:contexto}
 
-Para citar a orientação do autor, use `\citeonline{Wazlawick2020}` quando precisar reproduzir uma afirmação direta sobre metodologia. Ao resumir outros trabalhos, integre as ideias ao seu texto e utilize `\cite{Silva2022}` como exemplo de citação indireta.
+Descreva o cenário atual e a lacuna identificada, embasando o texto em dados, estatísticas, políticas ou práticas profissionais. Evite narrativas históricas extensas e mantenha o foco no problema, ressaltando a relevância do assunto para a Computação e para a sociedade.
 
+Descreva o ambiente ou domínio em que o problema ocorre, utilizando dados e referências que comprovem a sua existência. Explique quem são os principais afetados e quais são as consequências de não resolvê-lo.
+
+\vspace{0.3cm}
+\noindent\fbox{\parbox{\dimexpr\textwidth-2\fboxsep-2\fboxrule}{%
+\textbf{Orientação sobre citações (ABNT NBR 10520:2023)}
+
+\vspace{0.2cm}
+O aluno deve \textbf{priorizar citações indiretas} (paráfrases), nas quais a ideia do autor é reescrita com as próprias palavras. Citações diretas (transcrições literais) \textbf{não são recomendadas}, exceto quando o texto original for insubstituível --- por exemplo, definições consagradas, leis, normas técnicas ou trechos cuja reformulação alteraria o sentido.
+
+\vspace{0.2cm}
+\textbf{Citação indireta} (recomendada) --- o autor interpreta e reescreve a ideia:
+
+\vspace{0.1cm}
+\textit{Exemplo 1 --- sistema autor-data entre parênteses:}\\
+A definição clara do problema é considerada um fator determinante para o sucesso de qualquer pesquisa na área de Computação \cite{Wazlawick2020}.
+
+\vspace{0.1cm}
+\textit{Exemplo 2 --- autor como parte do texto:}\\
+Para \citeonline{Silva2022}, a escolha de uma metodologia adequada impacta diretamente na qualidade dos resultados obtidos em projetos de software.
+
+\vspace{0.2cm}
+\textbf{Citação direta curta} (até 3 linhas, apenas quando indispensável) --- entre aspas, com indicação de página:
+
+\vspace{0.1cm}
+Segundo \citeonline[p.~42]{Wazlawick2020}, ``a formulação do problema deve ser expressa de forma clara, objetiva e delimitada, evitando ambiguidades que possam comprometer o escopo da pesquisa''.
+
+\vspace{0.2cm}
+\textbf{Citação direta longa} (mais de 3 linhas, apenas quando indispensável) --- recuo de 4\,cm, fonte menor, sem aspas:
+
+\begin{citacao}
+A revisão bibliográfica não consiste em simplesmente listar os trabalhos encontrados, mas em analisá-los criticamente, identificando convergências, divergências e lacunas que justifiquem a realização de uma nova pesquisa \cite[p.~87]{Wazlawick2020}.
+\end{citacao}
+
+\textbf{Resumo}: use citações indiretas como regra. Reserve a citação direta para casos excepcionais em que a transcrição literal seja realmente necessária.
+}}
+
+% ---------------------------------------------------------------
 \section{Formulação do problema}
-Coloque o problema em forma de pergunta clara, delimitando o que será investigado e qual resultado se espera atingir dentro da Computação.
+\label{sec:problema}
 
+Coloque o problema em forma de pergunta clara, delimitando o que será investigado e qual resultado se espera atingir dentro da Computação. A pergunta de pesquisa deve ser específica o suficiente para ser respondida ao longo do trabalho e diretamente derivada da lacuna apresentada na contextualização.
+
+% ---------------------------------------------------------------
 \section{Objetivos e hipótese}
+\label{sec:objetivos}
+
+Os objetivos definem o que o trabalho pretende alcançar. Devem ser claros, mensuráveis e diretamente relacionados ao problema identificado.
+
 \subsection{Objetivo geral}
+
 Declare o propósito principal do TCC2 em uma frase direta, conectando-o ao problema e deixando claro se o foco é compreender, comparar, validar ou propor algo novo.
 
+\textbf{Dica}: utilize verbos no infinitivo como \textit{desenvolver}, \textit{analisar}, \textit{propor}, \textit{avaliar}, \textit{implementar}, \textit{comparar}, entre outros. Evite verbos vagos como \textit{estudar} ou \textit{entender}.
+
 \subsection{Objetivos específicos}
+
 Liste objetivos mensuráveis que estruturam o plano de trabalho. Tente utilizar verbos como revisar, comparar, modelar, quantificar ou validar. Exemplos:
-\begin{itemize}
+
+\begin{enumerate}
     \item Revisar obras-chave sobre [tema] e identificar lacunas;
     \item Modelar ou prototipar a abordagem proposta;
     \item Implementar experimentos controlados;
     \item Avaliar o desempenho por métricas (ex.: acurácia, latência).
-\end{itemize}
+\end{enumerate}
+
+\textbf{Atenção}: cada objetivo específico deve contribuir diretamente para o alcance do objetivo geral. Evite listar objetivos que não tenham relação clara com o problema.
 
 \subsection{Hipótese ou critério de validação}
+
 Descreva a hipótese que será testada ou o critério usado para afirmar que o objetivo geral foi atingido. Caso não haja hipótese formal, explique como as métricas escolhidas demonstrarão o sucesso esperado.
 
+% ---------------------------------------------------------------
 \section{Justificativa}
-Ressalte a importância do problema para a Computação, destacando contribuições acadêmicas, sociais ou industriais. Explique como a proposta evita se tornar um “manual de ferramenta”.
+\label{sec:justificativa}
 
-% ---------------------------------------------------------------
-% REVISÃO BIBLIOGRÁFICA
-% ---------------------------------------------------------------
+Explicite por que resolver esse problema é importante. A justificativa deve abordar:
+
+\begin{itemize}
+    \item \textbf{Relevância acadêmica}: como este trabalho contribui para o avanço do conhecimento na área;
+    \item \textbf{Relevância prática/profissional}: quais benefícios práticos a solução trará para usuários, organizações ou a sociedade;
+    \item \textbf{Lacuna identificada}: o que ainda não foi resolvido ou explorado suficientemente pelos trabalhos existentes.
+\end{itemize}
+
+Ressalte a importância do problema para a Computação, destacando contribuições acadêmicas, sociais ou industriais. Explique como a proposta evita se tornar um ``manual de ferramenta''.
+
+% ===============================================================
+% CAPÍTULO 2 - REVISÃO BIBLIOGRÁFICA / TRABALHOS RELACIONADOS
+% ===============================================================
 \chapter{Revisão Bibliográfica / Trabalhos Relacionados}
+\label{cap:revisao}
 
+A revisão bibliográfica tem como finalidade apresentar o embasamento teórico e técnico do trabalho, demonstrando o conhecimento do autor sobre o tema e identificando o estado da arte. Este capítulo está organizado em três seções: os \textbf{fundamentos teóricos} necessários à compreensão da proposta, as \textbf{técnicas e abordagens existentes} no contexto do problema e os \textbf{trabalhos correlatos} que enfrentaram o mesmo desafio, com suas respectivas limitações.
+
+% ---------------------------------------------------------------
 \section{Fundamentos teóricos necessários}
-Explique os conceitos essenciais, definindo termos e equações quando necessário. Utilize blocos de texto ou pequenos quadros comparativos para sintetizar modelos.
+\label{sec:fundamentos}
 
-Um exemplo de citação direta poderia ser `\citeonline{Silva2022}` para reforçar que determinados métodos exigem validação empírica; uma citação indireta pode ser escrita como “vários estudos destacam ...” seguido de `\cite{Wazlawick2020}`.
+Explique os conceitos essenciais, definindo termos e equações quando necessário. Utilize blocos de texto ou pequenos quadros comparativos para sintetizar modelos. Organize esta seção por temas ou conceitos, não por autor, partindo do mais geral para o mais específico.
 
+Utilize citações para fundamentar cada conceito apresentado. Uma citação direta pode ser empregada, por exemplo, com \citeonline{Silva2022} para reforçar que determinados métodos exigem validação empírica; uma citação indireta pode ser escrita como ``vários estudos destacam \ldots'' seguida de \cite{Wazlawick2020}.
+
+% ---------------------------------------------------------------
 \section{Técnicas, métodos ou abordagens existentes}
+\label{sec:tecnicas}
+
 Apresente abordagens já empregadas no contexto e destaque o que funcionou ou falhou. Inclua uma tabela comparativa simples para clarificar diferenças:
+
 \begin{table}[htb]
   \centering
   \caption{Comparativo de abordagens relacionadas}
+  \label{tab:abordagens}
   \begin{tabular}{p{4cm}p{3cm}p{4cm}}
     \toprule
-    Abordagem & Domínio & Limitação principal \\
+    \textbf{Abordagem} & \textbf{Domínio} & \textbf{Limitação principal} \\
     \midrule
     Técnica A & IoT & Falta de validação em larga escala \\
     Técnica B & Redes neurais & Alto custo computacional \\
     \bottomrule
   \end{tabular}
-  \legend{Tabela ilustrativa com limitações observadas.}
+  \legend{Fonte: Elaborado pelo autor (2025)}
 \end{table}
 
+% ---------------------------------------------------------------
 \section{Trabalhos correlatos e limitações}
-Liste artigos diretamente relacionados e explique por que cada um não resolve totalmente o problema (ex.: falta de comparação, escopo diferente, dados limitados). Relacione essas lacunas com o que sua pesquisa pretende preencher.
+\label{sec:trabalhos_correlatos}
 
-\textit{Evite a “síndrome da intersecção esquecida”: inclua trabalhos que aplicaram a técnica na mesma área.}
+Liste artigos diretamente relacionados e explique por que cada um não resolve totalmente o problema (ex.: falta de comparação, escopo diferente, dados limitados). Relacione essas lacunas com o que sua pesquisa pretende preencher. Para cada trabalho correlato, descreva:
 
-% ---------------------------------------------------------------
-% METODOLOGIA
-% ---------------------------------------------------------------
+\begin{enumerate}
+    \item \textbf{Qual problema} o trabalho tentou resolver (e por que é o mesmo problema que o seu);
+    \item A metodologia ou abordagem utilizada para resolvê-lo;
+    \item Os principais resultados obtidos;
+    \item As limitações identificadas na solução proposta;
+    \item Como o \textbf{seu trabalho se diferencia} ou avança em relação a ele.
+\end{enumerate}
+
+\textit{Evite a ``síndrome da intersecção esquecida'': inclua trabalhos que aplicaram a técnica na mesma área.}
+
+% ===============================================================
+% CAPÍTULO 3 - METODOLOGIA
+% ===============================================================
 \chapter{Metodologia}
+\label{cap:metodologia}
 
+A metodologia descreve, de forma rigorosa e reprodutível, como a pesquisa será conduzida. Este capítulo apresenta o tipo de pesquisa e a hipótese, os procedimentos da abordagem proposta, as ferramentas e tecnologias empregadas e os procedimentos experimentais com as respectivas métricas de avaliação.
+
+% ---------------------------------------------------------------
 \section{Tipo de pesquisa e hipótese}
+\label{sec:tipo_pesquisa}
+
 Informe qual tipo de pesquisa será conduzido (exploratória, empírica, formal etc.) e registre as hipóteses que serão avaliadas. Caso não haja hipótese formal, descreva o critério de sucesso esperado.
 
+% ---------------------------------------------------------------
 \section{Procedimentos da abordagem proposta}
-Detalhe etapas da metodologia em ordem cronológica. Use listas numeradas, diagramas de fluxo ou pseudocódigo para tornar o processo claro.
+\label{sec:procedimentos}
 
+Detalhe as etapas da metodologia em ordem cronológica. Use listas numeradas, diagramas de fluxo ou pseudocódigo para tornar o processo claro e reprodutível.
+
+% ---------------------------------------------------------------
 \section{Ferramentas, tecnologias e ambientes}
-Liste softwares, linguagens, bibliotecas, frameworks e ambientes (laboratórios, nuvem, simulação) que serão usados. Justifique a escolha com base no problema e nas métricas.
+\label{sec:ferramentas}
 
+Liste softwares, linguagens, bibliotecas, frameworks e ambientes (laboratórios, nuvem, simulação) que serão usados. Justifique a escolha com base no problema e nas métricas definidas.
+
+% ---------------------------------------------------------------
 \section{Procedimentos experimentais e métricas}
+\label{sec:experimentos_metricas}
+
 Explique como os experimentos serão configurados, quais variáveis serão controladas e quais métricas demonstram que a proposta cumpre os objetivos (ex.: acurácia, latência, custo). Inclua tabelas que antecipem o plano de coleta, por exemplo:
+
 \begin{table}[htb]
   \centering
   \caption{Plano de experimentação}
-  \begin{tabular}{lccc}
+  \label{tab:plano_experimentos}
+  \begin{tabular}{lcc}
     \toprule
-    Experimento & Variável controlada & Métrica principal \\
+    \textbf{Experimento} & \textbf{Variável controlada} & \textbf{Métrica principal} \\
     \midrule
     Comparação com baseline & algoritmo & acurácia \\
     Escalabilidade & carga & tempo médio \\
     \bottomrule
   \end{tabular}
-  \legend{Exemplo de como documentar experimentos.}
+  \legend{Fonte: Elaborado pelo autor (2025)}
 \end{table}
 
 \textit{Propor algo não basta: demonstre como será validado.}
@@ -300,8 +501,56 @@ Além do documento escrito, o TCC2 é avaliado por uma \textbf{apresentação or
 \textbf{Distribuição de tempo sugerida (30 min):} introdução/problema $\approx$ 4 min; objetivos/método $\approx$ 5 min; desenvolvimento $\approx$ 8 min; resultados/análise $\approx$ 8 min; conclusão $\approx$ 3 min; demonstração $\approx$ 2 min.
 }}
 
+% ---------------------------------------------------------------
+% ELEMENTOS PÓS-TEXTUAIS
+% ---------------------------------------------------------------
 \postextual
 
+% ===============================================================
+% REFERÊNCIAS BIBLIOGRÁFICAS
+% ===============================================================
+% As referências bibliográficas são geradas automaticamente a partir
+% do arquivo bibliografia_tcc2.bib, seguindo o padrão ABNT (NBR 6023).
+%
+% COMO CITAR no texto:
+%   \cite{chave}         -> (SOBRENOME, ano) — citação indireta
+%   \citeonline{chave}   -> Sobrenome (ano) — citação direta no texto
+%
+% TIPOS DE REFERÊNCIA no arquivo .bib:
+%   @book        -> Livros
+%   @article     -> Artigos de periódicos
+%   @inproceedings -> Artigos em anais de eventos
+%   @mastersthesis -> Dissertações de mestrado
+%   @phdthesis   -> Teses de doutorado
+%   @misc        -> Sites, vídeos e outros materiais
+%   @manual      -> Documentação técnica
+% ---------------------------------------------------------------
 \bibliography{bibliografia_tcc2}
+
+% ---------------------------------------------------------------
+% APÊNDICES (se necessário)
+% ---------------------------------------------------------------
+% \begin{apendicesenv}
+% \partapendices
+%
+% \chapter{Nome do Apêndice}
+% \label{ap:apendice1}
+%
+% Conteúdo do apêndice (material elaborado pelo próprio autor).
+%
+% \end{apendicesenv}
+
+% ---------------------------------------------------------------
+% ANEXOS (se necessário)
+% ---------------------------------------------------------------
+% \begin{anexosenv}
+% \partanexos
+%
+% \chapter{Nome do Anexo}
+% \label{an:anexo1}
+%
+% Conteúdo do anexo (material de terceiros).
+%
+% \end{anexosenv}
 
 \end{document}
