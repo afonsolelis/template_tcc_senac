@@ -287,21 +287,32 @@ Ressalte a importância do problema para a Computação, destacando contribuiç�
 \chapter{Revisão Bibliográfica / Trabalhos Relacionados}
 \label{cap:revisao}
 
-A revisão bibliográfica tem como finalidade apresentar o embasamento teórico e técnico do trabalho, demonstrando o conhecimento do autor sobre o tema e identificando o estado da arte. Este capítulo está organizado em três seções: os \textbf{fundamentos teóricos} necessários à compreensão da proposta, as \textbf{técnicas e abordagens existentes} no contexto do problema e os \textbf{trabalhos correlatos} que enfrentaram o mesmo desafio, com suas respectivas limitações.
+A revisão bibliográfica tem como finalidade apresentar o embasamento teórico do trabalho, demonstrando o conhecimento do autor sobre o tema e identificando o estado da arte. Este capítulo está organizado em três seções: a \textbf{metodologia da pesquisa bibliográfica} (como as fontes foram levantadas e selecionadas), os \textbf{fundamentos teóricos} (os conceitos, teorias e técnicas que fundamentam a proposta) e os \textbf{trabalhos correlatos} (estudos que enfrentaram o mesmo problema, com suas limitações).
 
 % ---------------------------------------------------------------
-\section{Fundamentos teóricos necessários}
+\section{Metodologia da pesquisa bibliográfica}
+\label{sec:metodologia_pesquisa_bib}
+
+Descreva como a pesquisa bibliográfica foi conduzida, incluindo:
+
+\begin{itemize}
+    \item \textbf{Bases de dados consultadas}: Google Scholar, IEEE Xplore, ACM Digital Library, SciELO, Periódicos CAPES, entre outras;
+    \item \textbf{Palavras-chave utilizadas}: liste os termos de busca em português e inglês;
+    \item \textbf{Critérios de inclusão e exclusão}: quais critérios foram usados para selecionar ou descartar trabalhos (período, idioma, relevância, tipo de publicação);
+    \item \textbf{Período de abrangência}: intervalo de anos das publicações consultadas.
+\end{itemize}
+
+Exemplo de descrição:
+
+\textit{A pesquisa bibliográfica foi realizada nas bases Google Scholar, IEEE Xplore e ACM Digital Library, utilizando as palavras-chave ``machine learning'', ``classificação de texto'' e ``processamento de linguagem natural''. Foram selecionados artigos publicados entre 2018 e 2025, em português e inglês, que abordassem diretamente o problema investigado.}
+
+% ---------------------------------------------------------------
+\section{Fundamentos teóricos}
 \label{sec:fundamentos}
 
-Explique os conceitos essenciais, definindo termos e equações quando necessário. Utilize blocos de texto ou pequenos quadros comparativos para sintetizar modelos. Organize esta seção por temas ou conceitos, não por autor, partindo do mais geral para o mais específico.
+Explique os conceitos essenciais, definindo termos e equações quando necessário, e apresente as técnicas, métodos ou abordagens já empregados no contexto do problema, destacando o que funcionou ou falhou. Organize esta seção por temas ou conceitos, não por autor, partindo do mais geral para o mais específico. Utilize blocos de texto ou pequenos quadros comparativos para sintetizar modelos.
 
-Utilize citações para fundamentar cada conceito apresentado. Uma citação direta pode ser empregada, por exemplo, com \citeonline{Silva2022} para reforçar que determinados métodos exigem validação empírica; uma citação indireta pode ser escrita como ``vários estudos destacam \ldots'' seguida de \cite{Wazlawick2020}.
-
-% ---------------------------------------------------------------
-\section{Técnicas, métodos ou abordagens existentes}
-\label{sec:tecnicas}
-
-Apresente abordagens já empregadas no contexto e destaque o que funcionou ou falhou. Inclua uma tabela comparativa simples para clarificar diferenças:
+Utilize citações para fundamentar cada conceito apresentado. Uma citação direta pode ser empregada, por exemplo, com \citeonline{Silva2022} para reforçar que determinados métodos exigem validação empírica; uma citação indireta pode ser escrita como ``vários estudos destacam \ldots'' seguida de \cite{Wazlawick2020}. Uma tabela comparativa ajuda a clarificar diferenças entre as abordagens existentes:
 
 \begin{table}[htb]
   \centering
@@ -319,7 +330,7 @@ Apresente abordagens já empregadas no contexto e destaque o que funcionou ou fa
 \end{table}
 
 % ---------------------------------------------------------------
-\section{Trabalhos correlatos e limitações}
+\section{Trabalhos correlatos}
 \label{sec:trabalhos_correlatos}
 
 Liste artigos diretamente relacionados e explique por que cada um não resolve totalmente o problema (ex.: falta de comparação, escopo diferente, dados limitados). Relacione essas lacunas com o que sua pesquisa pretende preencher. Para cada trabalho correlato, descreva:
@@ -335,36 +346,16 @@ Liste artigos diretamente relacionados e explique por que cada um não resolve t
 \textit{Evite a ``síndrome da intersecção esquecida'': inclua trabalhos que aplicaram a técnica na mesma área.}
 
 % ===============================================================
-% CAPÍTULO 3 - METODOLOGIA
+% CAPÍTULO 3 - DESENVOLVIMENTO
 % ===============================================================
-\chapter{Metodologia}
-\label{cap:metodologia}
-
-A metodologia descreve, de forma rigorosa e reprodutível, como a pesquisa será conduzida. Este capítulo apresenta o tipo de pesquisa e a hipótese, os procedimentos da abordagem proposta, as ferramentas e tecnologias empregadas e os procedimentos experimentais com as respectivas métricas de avaliação.
+\chapter{Desenvolvimento / Implementação / Experimentos}
+\label{cap:desenvolvimento}
 
 % ---------------------------------------------------------------
-\section{Tipo de pesquisa e hipótese}
-\label{sec:tipo_pesquisa}
+\section{Metodologia da pesquisa}
+\label{sec:metodologia_pesquisa}
 
-Informe qual tipo de pesquisa será conduzido (exploratória, empírica, formal etc.) e registre as hipóteses que serão avaliadas. Caso não haja hipótese formal, descreva o critério de sucesso esperado.
-
-% ---------------------------------------------------------------
-\section{Procedimentos da abordagem proposta}
-\label{sec:procedimentos}
-
-Detalhe as etapas da metodologia em ordem cronológica. Use listas numeradas, diagramas de fluxo ou pseudocódigo para tornar o processo claro e reprodutível.
-
-% ---------------------------------------------------------------
-\section{Ferramentas, tecnologias e ambientes}
-\label{sec:ferramentas}
-
-Liste softwares, linguagens, bibliotecas, frameworks e ambientes (laboratórios, nuvem, simulação) que serão usados. Justifique a escolha com base no problema e nas métricas definidas.
-
-% ---------------------------------------------------------------
-\section{Procedimentos experimentais e métricas}
-\label{sec:experimentos_metricas}
-
-Explique como os experimentos serão configurados, quais variáveis serão controladas e quais métricas demonstram que a proposta cumpre os objetivos (ex.: acurácia, latência, custo). Inclua tabelas que antecipem o plano de coleta, por exemplo:
+Descreva, de forma rigorosa e reprodutível, como a pesquisa foi conduzida. Informe o tipo de pesquisa (exploratória, empírica, formal etc.) e a hipótese ou o critério de sucesso adotado; detalhe os procedimentos da abordagem proposta, em ordem cronológica (use listas numeradas, diagramas de fluxo ou pseudocódigo para tornar o processo claro); liste as ferramentas, linguagens, bibliotecas, frameworks e ambientes utilizados, justificando cada escolha com base no problema; e explique como os experimentos foram configurados, quais variáveis foram controladas e quais métricas demonstram que a proposta cumpre os objetivos (ex.: acurácia, latência, custo).
 
 \begin{table}[htb]
   \centering
@@ -383,32 +374,20 @@ Explique como os experimentos serão configurados, quais variáveis serão contr
 
 \textit{Propor algo não basta: demonstre como será validado.}
 
-% ---------------------------------------------------------------
-% DESENVOLVIMENTO
-% ---------------------------------------------------------------
-\chapter{Desenvolvimento / Implementação / Experimentos}
+\section{Detalhes da implementação}
+\label{sec:implementacao}
 
-\section{Modelagem e arquitetura}
-Apresente diagramas (UML, blocos ou fluxogramas) que mostram como os módulos se relacionam, identificando componentes críticos e como eles atendem ao problema e à metodologia.
+Explique a modelagem e a arquitetura da solução (diagramas UML, blocos ou fluxogramas que mostrem como os módulos se relacionam e atendem ao problema), as escolhas tecnológicas, as estruturas de dados e as integrações. Quando esclarecerem decisões de pesquisa, inclua trechos de código relevantes ou pseudoexemplos. Caso o trabalho envolva dados, descreva também como eles foram coletados (logs, sensores, APIs), armazenados e preparados (limpeza, normalização, anonimização).
 
-\section{Detalhes de implementação}
-Explique escolhas tecnológicas, estruturas de dados e integrações. Inclua trechos de código relevantes ou pseudoexemplos se esclarecerem decisões de pesquisa.
+\section{Experimentos e cenário de testes (opcional)}
+\label{sec:experimentos}
 
-\section{Experimentos e cenários de teste}
-Descreva os cenários planejados, parâmetros testados e por que cada experimento está alinhado aos objetivos. Liste os conjuntos de dados, variações e número de repetições.
+Esta seção é \textbf{opcional} e deve ser incluída quando o trabalho prevê avaliação experimental. Descreva os cenários planejados, os parâmetros testados e por que cada experimento está alinhado aos objetivos. Liste os conjuntos de dados, as variações e o número de repetições.
 
-\section{Coleta e tratamento de dados}
-Explique como os dados foram coletados (logs, sensores, APIs), armazenados e preparados (limpeza, normalização, anonimização). Registre ferramentas usadas no pré-processamento.
+\section{Resultados e análises}
+\label{sec:resultados}
 
-\textit{O desenvolvimento só é pesquisa se estiver claramente ligado ao problema e à metodologia definida.}
-
-% ---------------------------------------------------------------
-% RESULTADOS
-% ---------------------------------------------------------------
-\chapter{Resultados e Análise}
-
-\section{Apresentação dos resultados}
-Mostre resultados com tabelas, gráficos e figuras. Diferencie:
+Apresente os resultados com tabelas, gráficos e figuras e, sobretudo, \textbf{analise-os} à luz da revisão bibliográfica e da hipótese --- resultados devem ser analisados, não apenas exibidos. Diferencie:
 \begin{itemize}
   \item \textbf{Figura:} imagens, diagramas conceituais ou arquiteturais que ilustram estrutura ou fluxo.
   \item \textbf{Gráfico:} plot de dados (linhas, barras, boxplots) que compara métricas obtidas.
@@ -418,6 +397,7 @@ Exemplo de tabela:
 \begin{table}[htb]
   \centering
   \caption{Comparação de métricas reportadas}
+  \label{tab:metricas}
   \begin{tabular}{lcc}
     \toprule
     Método & Acurácia & Tempo médio (ms) \\
@@ -426,10 +406,10 @@ Exemplo de tabela:
     Baseline & 88\% & 220 \\
     \bottomrule
   \end{tabular}
-  \legend{Tabela exemplificando como comparar métricas.}
+  \legend{Fonte: Elaborado pelo autor (2025)}
 \end{table}
 
-Ao inserir um gráfico (por exemplo `assets/figures/desempenho.png`), use:
+Ao inserir um gráfico (por exemplo \texttt{assets/figures/desempenho.png}), use:
 \begin{verbatim}
 \begin{figure}[htb]
   \centering
@@ -439,13 +419,9 @@ Ao inserir um gráfico (por exemplo `assets/figures/desempenho.png`), use:
 \end{figure}
 \end{verbatim}
 
-\section{Análise crítica e comparação}
-Discuta as descobertas com base na revisão bibliográfica e na hipótese. Evidencie ganhos e perdas.
+Na sequência, faça a \textbf{análise crítica e comparação}, discutindo as descobertas em relação aos trabalhos correlatos e evidenciando ganhos e perdas; por fim, na \textbf{discussão}, relacione os resultados aos objetivos e à hipótese, explicitando se o critério de sucesso foi atingido.
 
-\section{Discussão}
-Relacione os resultados aos objetivos e à hipótese, explicitando se o critério de sucesso foi atingido.
-
-\textit{Resultados devem ser analisados, não apenas exibidos.}
+\textit{O desenvolvimento só é pesquisa se estiver claramente ligado ao problema e à metodologia definida.}
 
 % ---------------------------------------------------------------
 % CONCLUSÃO
