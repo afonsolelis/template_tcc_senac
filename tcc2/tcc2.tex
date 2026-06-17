@@ -126,18 +126,39 @@ Este documento apresenta o Trabalho de Conclusão de Curso (TCC2) desenvolvido n
 \end{resumo}
 
 % ---------------------------------------------------------------
-% LISTA DE ILUSTRAÇÕES
+% ABSTRACT (RESUMO EM LÍNGUA ESTRANGEIRA) -- OBRIGATÓRIO NO TCC2
 % ---------------------------------------------------------------
-% \pdfbookmark[0]{\listfigurename}{lof}
-% \listoffigures*
-% \cleardoublepage
+% Versão em inglês do resumo. Deve conter o mesmo conteúdo do resumo
+% em português (problema, objetivo, método, resultados e conclusão)
+% e as palavras-chave traduzidas (Keywords). Pela ABNT NBR 14724, o
+% resumo em língua estrangeira vem logo após o resumo em português.
+\begin{resumo}[Abstract]
+ \begin{otherlanguage*}{english}
+   This document presents the undergraduate final project (TCC2) developed at SENAC Santo Amaro, based on the structure recommended by Raul Sidnei Wazlawick in \textit{Metodologia de Pesquisa para Ciência da Computação}. The focus is on highlighting the problem, the objectives, the method, the development, the results and the scientific contribution of the work, avoiding merely descriptive texts. The document is organized into chapters presenting the introduction to the topic, the literature review that grounds the research, the adopted methodology, the development of the solution, the results and their critical analysis, followed by the conclusion and the bibliographic references.
+
+   \vspace{\onelineskip}
+
+   \noindent
+   \textbf{Keywords}: keyword1. keyword2. keyword3. keyword4. keyword5.
+ \end{otherlanguage*}
+\end{resumo}
+
+% ---------------------------------------------------------------
+% LISTA DE ILUSTRAÇÕES (FIGURAS)
+% ---------------------------------------------------------------
+% Gerada automaticamente a partir das \caption{} das figuras.
+% Toda figura com legenda passa a constar nesta lista.
+\pdfbookmark[0]{\listfigurename}{lof}
+\listoffigures*
+\cleardoublepage
 
 % ---------------------------------------------------------------
 % LISTA DE TABELAS
 % ---------------------------------------------------------------
-% \pdfbookmark[0]{\listtablename}{lot}
-% \listoftables*
-% \cleardoublepage
+% Gerada automaticamente a partir das \caption{} das tabelas.
+\pdfbookmark[0]{\listtablename}{lot}
+\listoftables*
+\cleardoublepage
 
 % ---------------------------------------------------------------
 % LISTA DE ABREVIATURAS E SIGLAS
@@ -171,6 +192,34 @@ UML   & \textit{Unified Modeling Language} \\
 \cleardoublepage
 
 % ---------------------------------------------------------------
+% GLOSSÁRIO
+% ---------------------------------------------------------------
+% Em ordem alfabética, defina os termos técnicos relevantes do
+% trabalho (conceitos, não meras siglas). Diferentemente da Lista
+% de Abreviaturas e Siglas, o glossário traz o SIGNIFICADO/definição
+% de cada termo. Observação: pela ABNT NBR 14724 o glossário também
+% pode aparecer como elemento PÓS-textual (após as referências);
+% aqui ele é apresentado antes da Introdução, conforme orientação
+% da disciplina. Edite os itens conforme o seu projeto.
+\pdfbookmark[0]{Glossário}{glo}
+\chapter*{Glossário}
+
+\noindent O glossário a seguir reúne, em ordem alfabética, os principais termos técnicos empregados neste trabalho, acompanhados de suas definições. Substitua, acrescente ou remova itens conforme a necessidade do seu projeto.
+
+\vspace{\onelineskip}
+
+\begin{description}
+  \item[Backend] Camada da aplicação responsável pela lógica de negócio, pelo processamento dos dados e pela comunicação com o banco de dados.
+  \item[Endpoint] Ponto de acesso de uma API, identificado por uma URL, que responde às requisições enviadas pelo cliente.
+  \item[Framework] Estrutura de software reutilizável que oferece funcionalidades genéricas e padroniza o desenvolvimento de aplicações.
+  \item[Frontend] Camada da aplicação com a qual o usuário interage diretamente, responsável pela interface e pela experiência de uso.
+  \item[Protótipo] Versão preliminar e funcional de um sistema, construída para validar conceitos e requisitos antes da implementação definitiva.
+  \item[Repositório] Local centralizado onde o código-fonte e o seu histórico de versões são armazenados e gerenciados.
+\end{description}
+
+\cleardoublepage
+
+% ---------------------------------------------------------------
 % SUMÁRIO
 % ---------------------------------------------------------------
 \pdfbookmark[0]{\contentsname}{toc}
@@ -188,7 +237,23 @@ UML   & \textit{Unified Modeling Language} \\
 \chapter{Introdução}
 \label{cap:introducao}
 
-A introdução deve apresentar o tema do trabalho de forma clara e objetiva, situando o leitor no contexto da pesquisa. Neste capítulo são apresentados a contextualização do problema, a sua formulação, os objetivos e a hipótese que norteiam a pesquisa, bem como a justificativa para a realização do estudo.
+A introdução deve apresentar o tema do trabalho de forma clara, objetiva e \textbf{acessível}, situando \emph{qualquer} leitor --- inclusive quem não é da área de Computação --- no contexto da pesquisa. Comece com uma linguagem simples, compreensível por um público amplo, e só então conduza o leitor, de forma gradual, até o problema técnico específico. Neste capítulo são apresentados a contextualização do problema, a sua formulação, os objetivos e a hipótese que norteiam a pesquisa, bem como a justificativa para a realização do estudo.
+
+\vspace{0.3cm}
+\noindent\fbox{\parbox{\dimexpr\textwidth-2\fboxsep-2\fboxrule}{%
+\textbf{Orientação sobre a linguagem da introdução}
+
+\vspace{0.2cm}
+Escreva a \textbf{abertura} da introdução pensando em um \textbf{público amplo}, e não apenas na banca ou em especialistas. Um bom teste: alguém de outra área --- um colega de outro curso ou um familiar --- deveria entender, já nas primeiras linhas, qual é o assunto e por que ele importa.
+
+\vspace{0.2cm}
+\begin{itemize}
+    \item \textbf{Do geral para o específico (técnica do ``funil'')}: parta do cenário cotidiano e vá afunilando, parágrafo a parágrafo, até o problema técnico que será investigado.
+    \item \textbf{Evite jargão e siglas logo de início}; quando um termo técnico for inevitável, explique-o de forma simples na primeira vez em que aparecer.
+    \item \textbf{Use exemplos concretos ou analogias} do dia a dia para tornar o tema palpável ao leitor leigo.
+    \item \textbf{Reserve o aprofundamento técnico} para a Revisão Bibliográfica e o Desenvolvimento --- a introdução prepara o terreno, não esgota o assunto.
+\end{itemize}
+}}
 
 % ---------------------------------------------------------------
 \section{Contextualização do problema}
@@ -379,6 +444,23 @@ Descreva, de forma rigorosa e reprodutível, como a pesquisa foi conduzida. Info
 
 Explique a modelagem e a arquitetura da solução (diagramas UML, blocos ou fluxogramas que mostrem como os módulos se relacionam e atendem ao problema), as escolhas tecnológicas, as estruturas de dados e as integrações. Quando esclarecerem decisões de pesquisa, inclua trechos de código relevantes ou pseudoexemplos. Caso o trabalho envolva dados, descreva também como eles foram coletados (logs, sensores, APIs), armazenados e preparados (limpeza, normalização, anonimização).
 
+% ---------------------------------------------------------------
+% EXEMPLO DE INSERÇÃO DE FIGURA (substitua pela sua imagem)
+% A imagem deve ficar na pasta assets/ (ex.: assets/figures/arquitetura.png).
+% ORDEM ABNT: o título (\caption) vem ACIMA da figura e a fonte
+% (\legend) vem ABAIXO. Por isso \caption e \label aparecem ANTES do
+% \includegraphics. Use \ref{...} para citar a figura no texto.
+% ---------------------------------------------------------------
+\begin{figure}[htb]
+    \centering
+    \caption{Exemplo de inserção de figura --- substitua pelo diagrama da arquitetura da sua solução.}
+    \label{fig:arquitetura}
+    \includegraphics[width=0.35\textwidth]{assets/logo-senac.png}
+    \legend{Fonte: Elaborado pelo autor (2025)}
+\end{figure}
+
+Toda figura deve ser numerada, ter legenda (\verb|\caption|) e indicação de fonte, além de ser citada no texto --- por exemplo, a Figura~\ref{fig:arquitetura}. As figuras com legenda aparecem automaticamente na \textit{Lista de ilustrações}, nos elementos pré-textuais.
+
 \section{Experimentos e cenário de testes (opcional)}
 \label{sec:experimentos}
 
@@ -409,13 +491,14 @@ Exemplo de tabela:
   \legend{Fonte: Elaborado pelo autor (2025)}
 \end{table}
 
-Ao inserir um gráfico (por exemplo \texttt{assets/figures/desempenho.png}), use:
+Ao inserir um gráfico (por exemplo \texttt{assets/figures/desempenho.png}), use --- lembrando que, pela ABNT, o \texttt{\textbackslash caption} (título) vem \textbf{acima} da imagem e a fonte (\texttt{\textbackslash legend}) vem \textbf{abaixo}:
 \begin{verbatim}
 \begin{figure}[htb]
   \centering
-  \includegraphics[width=0.8\textwidth]{assets/figures/desempenho.png}
   \caption{Gráfico de comparação das métricas de acurácia.}
   \label{fig:grafico-desempenho}
+  \includegraphics[width=0.8\textwidth]{assets/figures/desempenho.png}
+  \legend{Fonte: Elaborado pelo autor (2025)}
 \end{figure}
 \end{verbatim}
 
