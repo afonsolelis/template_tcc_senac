@@ -61,6 +61,34 @@
 \definecolor{blue}{RGB}{41,5,195}
 
 % ---------------------------------------------------------------
+% TAMANHO DA FONTE DAS LEGENDAS (ABNT) -- 10 pt
+% ---------------------------------------------------------------
+% O título (\caption) e a linha de fonte (\legend) de figuras e
+% tabelas devem ficar em 10 pt (o corpo do texto é 12 pt). Por
+% padrão o memoir/abntex2 deixa essas legendas em 12 pt; os comandos
+% abaixo reduzem o título e a fonte para 10 pt.
+\renewcommand{\ABNTEXfontereduzida}{\fontsize{10}{12}\selectfont}
+\captionnamefont{\ABNTEXfontereduzida}   % rótulo "Figura N"/"Tabela N"
+\captiontitlefont{\ABNTEXfontereduzida}  % texto do título da legenda
+\makeatletter
+% Redefine \legend (usado em "Fonte: ...") para sair em 10 pt
+% (a definição original do memoir fixa \normalsize = 12 pt).
+\renewcommand{\legend}[1]{%
+  \M@gettitle{#1}%
+  \memlegendinfo{#1}%
+  \par
+  \begingroup
+    \@parboxrestore
+    \if@minipage
+      \@setminipage
+    \fi
+    \ABNTEXfontereduzida
+    \captiondelim{\mbox{}}%
+    \@makecaption{}{\ignorespaces #1}\par
+  \endgroup}
+\makeatother
+
+% ---------------------------------------------------------------
 % INFORMAÇÕES DO DOCUMENTO
 % ---------------------------------------------------------------
 \titulo{Título do Trabalho de Conclusão de Curso}
@@ -188,34 +216,6 @@ UML   & \textit{Unified Modeling Language} \\
 \bottomrule
 \end{tabular}
 \end{center}
-
-\cleardoublepage
-
-% ---------------------------------------------------------------
-% GLOSSÁRIO
-% ---------------------------------------------------------------
-% Em ordem alfabética, defina os termos técnicos relevantes do
-% trabalho (conceitos, não meras siglas). Diferentemente da Lista
-% de Abreviaturas e Siglas, o glossário traz o SIGNIFICADO/definição
-% de cada termo. Observação: pela ABNT NBR 14724 o glossário também
-% pode aparecer como elemento PÓS-textual (após as referências);
-% aqui ele é apresentado antes da Introdução, conforme orientação
-% da disciplina. Edite os itens conforme o seu projeto.
-\pdfbookmark[0]{Glossário}{glo}
-\chapter*{Glossário}
-
-\noindent O glossário a seguir reúne, em ordem alfabética, os principais termos técnicos empregados neste trabalho, acompanhados de suas definições. Substitua, acrescente ou remova itens conforme a necessidade do seu projeto.
-
-\vspace{\onelineskip}
-
-\begin{description}
-  \item[Backend] Camada da aplicação responsável pela lógica de negócio, pelo processamento dos dados e pela comunicação com o banco de dados.
-  \item[Endpoint] Ponto de acesso de uma API, identificado por uma URL, que responde às requisições enviadas pelo cliente.
-  \item[Framework] Estrutura de software reutilizável que oferece funcionalidades genéricas e padroniza o desenvolvimento de aplicações.
-  \item[Frontend] Camada da aplicação com a qual o usuário interage diretamente, responsável pela interface e pela experiência de uso.
-  \item[Protótipo] Versão preliminar e funcional de um sistema, construída para validar conceitos e requisitos antes da implementação definitiva.
-  \item[Repositório] Local centralizado onde o código-fonte e o seu histórico de versões são armazenados e gerenciados.
-\end{description}
 
 \cleardoublepage
 
